@@ -57,29 +57,7 @@ exports.find = (req, res) => {
     }
 };
 
-// // Find a single product with a product Id
-// exports.findOne = (req, res) => {
-//     product.findById(req.params.id)
-//     .then(product => {
-//         if(!product) {
-//             return res.status(404).send({
-//                 message: "product not found with id " + req.params.id
-//             });
-//         }
-//         res.send(product);
-//     }).catch(err => {
-//         if(err.kind === 'ObjectId') {
-//             return res.status(404).send({
-//                 message: "product not found with id " + req.params.id
-//             });
-//         }
-//         return res.status(500).send({
-//             message: "Error retrieving product with id " + req.params.id
-//         });
-//     });
-// };
-
-// Update a product identified by the product in the request
+//TODO: Update a product identified by the product in the request
 exports.update = (req, res) => {
 
 };
