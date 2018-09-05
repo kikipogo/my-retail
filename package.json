@@ -20,5 +20,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongoose": "^5.2.12"
+  },
+  "engines": {
+    "node": "10.9.0"
   }
 }
