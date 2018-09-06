@@ -17,3 +17,14 @@ Request Body:
 ```{"id": "Number","current_price": {"value": "Number", "currency_code": "String"}}```
 
 Response 400: Bad request
+
+## Local Set-up:
+Clone repo
+Install dependencies
+```npm install```
+```Run Server```
+```node server.js```
+You can browse the apis at http://localhost:5000
+
+## Hosted at:
+https://cpogatchnik-my-retail.herokuapp.com/
