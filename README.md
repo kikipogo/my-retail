@@ -2,7 +2,7 @@
 
 The goal for this exercise is to create an end-to-end Proof-of-Concept for a products API, which will aggregate product data from multiple sources and return it as JSON to the caller. 
 
-# GET /products/{id}
+## GET /products/{id}
 
 Response 200: JSON describing product. 
 Example: 
@@ -10,7 +10,7 @@ Example:
 
 Response 404: No information found for Product.id.
 
-# POST /products
+## POST /products
 
 Response 200: JSON describing product.
 Request Body: 
