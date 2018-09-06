@@ -3,6 +3,9 @@
     "description": "A barebones RESTful api service to fetch prodcut data",
     "repository": "https://github.com/kikipogo/my-retail.git",
     "logo": "",
-    "keywords": ["node", "express"],
+    "keywords": [
+        "node",
+        "express"
+    ],
     "image": "heroku/nodejs"
 }
