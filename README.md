@@ -28,3 +28,12 @@ You can browse the apis at http://localhost:5000
 
 ## Hosted at:
 https://cpogatchnik-my-retail.herokuapp.com/
+
+
+## Built With 
+* MongoDB
+* Express
+* Node.js
+
+## Author 
+Christine Pogatchnik
