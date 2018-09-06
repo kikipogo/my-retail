@@ -6,6 +6,7 @@ The goal for this exercise is to create an end-to-end Proof-of-Concept for a pro
 
 Response 200: JSON describing product. 
 Example: 
+
 ```{"id":13860428,"name":"The Big Lebowski (Blu-ray) (Widescreen)","current_price":{"value": 10.50,"currency_code":"USD"}}```
 
 Response 404: No information found for Product.id.
@@ -14,6 +15,7 @@ Response 404: No information found for Product.id.
 
 Response 200: JSON describing product.
 Request Body: 
+
 ```{"id": "Number","current_price": {"value": "Number", "currency_code": "String"}}```
 
 Response 400: Bad request
@@ -21,9 +23,13 @@ Response 400: Bad request
 ## Local Set-up:
 Clone repo
 Install dependencies
+
 ```npm install```
+
 ```Run Server```
+
 ```node server.js```
+
 You can browse the apis at http://localhost:5000
 
 ## Hosted at:
