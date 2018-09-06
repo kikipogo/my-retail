@@ -1,8 +1,10 @@
-const Product = require("../models/product.model.js");
-const ProductResponseModel = require("../models/product-response.model.js");
-const https = require("https");
+const Product = require('../models/product.model.js');
+const ProductResponseModel = require('../models/product-response.model.js');
+const https = require('https');
 
-// Create and Save a new product
+/**
+ * Create and Save a new product
+ **/
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.id) {
@@ -10,7 +12,7 @@ exports.create = (req, res) => {
       message: JSON.stringify()
     });
   }
-  // Create a product
+  // Construct new product
   const product = new Product({
     id: req.body.id,
     current_price: {
@@ -18,8 +20,7 @@ exports.create = (req, res) => {
       currency_code: req.body.current_price.currency_code
     }
   });
-
-  // Save product in the database
+  //Save product in the database
   product
     .save()
     .then(data => {
@@ -28,12 +29,14 @@ exports.create = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message: err.message ||
-          "Some error occurred while creating the product."
+          'Some error occurred while creating the product.'
       });
     });
 };
 
-// Retrieve and return product from the database.
+/**
+ * Retrieve and return product from the database.
+ **/
 exports.find = (req, res) => {
   const id = req.params.id;
   if (id) {
@@ -41,12 +44,12 @@ exports.find = (req, res) => {
       const product = model;
       const url = `https://redsky.target.com/v2/pdp/tcin/${id}?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics`;
       https.get(url, response => {
-        response.setEncoding("utf8");
-        let rawData = "";
-        response.on("data", chunk => {
+        response.setEncoding('utf8');
+        let rawData = '';
+        response.on('data', chunk => {
           rawData += chunk;
         });
-        response.on("end", () => {
+        response.on('end', () => {
           try {
             const data = JSON.parse(rawData);
             const productResponseModel = new ProductResponseModel(
@@ -56,7 +59,7 @@ exports.find = (req, res) => {
             );
             res.send(productResponseModel);
           } catch (error) {
-           res.status("400").send(`No information found for Product_id: ${id}`);
+            res.status(404).send(`No information found for Product_id: ${id}`);
           }
         });
       });

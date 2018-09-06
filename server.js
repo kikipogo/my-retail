@@ -1,5 +1,5 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
 
 // create express app
@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Configuring the database
-const dbConfig = require("./config/database.config.js");
-const mongoose = require("mongoose");
+const dbConfig = require('./config/database.config.js');
+const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
@@ -23,20 +23,20 @@ mongoose
     useNewUrlParser: true
   })
   .then(() => {
-    console.log("Successfully connected to the database");
+    console.log('Successfully connected to the database');
   })
   .catch(err => {
-    console.log("Could not connect to the database. Exiting now...");
+    console.log('Could not connect to the database. Exiting now...');
     process.exit();
   });
 
 // define a simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to My-Retail application." });
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to My-Retail application.' });
 });
 
 // Require Product routes
-require("./app/routes/product.routes.js")(app);
+require('./app/routes/product.routes.js')(app);
 
 // listen for requests
 app.listen(PORT, () => {
