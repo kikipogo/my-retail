@@ -8,7 +8,7 @@ const https = require('https');
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.id) {
-    return res.status(404).send({
+    return res.status(400).send({
       message: JSON.stringify()
     });
   }
