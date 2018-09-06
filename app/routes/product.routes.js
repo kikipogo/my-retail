@@ -4,9 +4,9 @@ module.exports = app => {
   // Create a new product
   app.post('/products', products.create);
 
-  // Retrieve Products
+  // Retrieve Product by id
   app.get('/products/:id', products.find);
 
-  // Update a product with id
+  //TODO: Update a product with id
   app.put('/products/:id', products.update);
 };

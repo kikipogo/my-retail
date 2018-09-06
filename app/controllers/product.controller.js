@@ -8,7 +8,7 @@ const https = require('https');
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.id) {
-    return res.status(400).send({
+    return res.status(404).send({
       message: JSON.stringify()
     });
   }
@@ -26,9 +26,9 @@ exports.create = (req, res) => {
     .then(data => {
       res.send(data);
     })
-    .catch(err => {
+    .catch(error => {
       res.status(500).send({
-        message: err.message ||
+        message: error.message ||
           'Some error occurred while creating the product.'
       });
     });
